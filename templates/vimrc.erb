@@ -20,13 +20,19 @@ if has("autocmd")
   <% end -%>
 endif
 
+
 <% @opt_misc.each do |option| -%>
 set <%= option %>
+<% end -%>
+
+<% @opt_code.each do |codeblock| -%>
+<%=codeblock %>
 <% end -%>
 
 <% @opt_maps.each do |k,v| -%>
 map <%= k %> <%= v %>
 <% end -%>
+
 
 <% if @opt_powersave -%>
 let &guicursor = &guicursor . ",a:blinkon0"
